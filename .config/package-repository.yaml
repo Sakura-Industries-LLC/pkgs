@@ -21,4 +21,4 @@ producers:
       published: release-rpm-001.asc
     apk_key:
       source: keys/release-apk.rsa.pub
-      published: release-apk-001.rsa.pub
+      published: meigma-release-001.rsa.pub
