@@ -23,7 +23,7 @@ jobs:
     permissions:
       attestations: read
       contents: read
-    uses: meigma/release/.github/workflows/publish-package-repository.yml@67867b15ee137d98009afc21b91a76439e6aa5d7 # v0.1.10
+    uses: meigma/release/.github/workflows/publish-package-repository.yml@18bb710fcb30363b7d9d9d8f9cfbc8ef6790a4a8 # v0.1.11
     with:
       repository: ${{ inputs.repository || github.event.client_payload.repository }}
       tag: ${{ inputs.tag || github.event.client_payload.tag }}
