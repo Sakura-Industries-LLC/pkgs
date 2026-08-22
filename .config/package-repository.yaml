@@ -1,0 +1,24 @@
+channel: stable
+origin: https://pkgs.meigma.dev
+keys:
+  apt:
+    source: keys/repository.asc
+    published: apt-repository-001.asc
+  rpm:
+    source: keys/repository.asc
+    published: rpm-repository-001.asc
+  apk:
+    source: keys/repository-apk.rsa.pub
+    published: apk-index-001.rsa.pub
+producers:
+  - repository: meigma/release
+    packages:
+      - release-cli
+    checksum_workflow: .github/workflows/go-pre-publish.yml
+    attestation_workflow: .github/workflows/publish-github-release.yml
+    rpm_key:
+      source: keys/release-rpm.asc
+      published: release-rpm-001.asc
+    apk_key:
+      source: keys/release-apk.rsa.pub
+      published: release-apk-001.rsa.pub

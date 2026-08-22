@@ -1,0 +1,31 @@
+name: Publish package release
+
+on:
+  repository_dispatch:
+    types:
+      - package-release
+  workflow_dispatch:
+    inputs:
+      repository:
+        description: Producer repository as owner/name.
+        required: true
+        type: string
+      tag:
+        description: Exact stable producer release tag.
+        required: true
+        type: string
+
+permissions: {}
+
+jobs:
+  publish:
+    name: Publish package repository
+    permissions:
+      attestations: read
+      contents: read
+    uses: meigma/release/.github/workflows/publish-package-repository.yml@c1ee17342ec62b37fe728834975ce678f334ffd0 # v0.1.7
+    with:
+      repository: ${{ inputs.repository || github.event.client_payload.repository }}
+      tag: ${{ inputs.tag || github.event.client_payload.tag }}
+      cloudflare-account-id: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+      r2-bucket: ${{ vars.PACKAGE_REPOSITORY_R2_BUCKET }}

@@ -1,0 +1,7 @@
+# Default review owner.
+* @jmgilman
+
+# Workflow and policy changes require owner review.
+/.github/workflows/ @jmgilman
+/.config/package-repository.yaml @jmgilman
+/.config/keys/ @jmgilman

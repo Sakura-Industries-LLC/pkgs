@@ -1,0 +1,23 @@
+# Private keys and passphrases
+*.rsa
+*.key
+*.pem
+*.gpg
+*passphrase*
+*private-key*
+
+# Local environment
+.env
+.env.*
+.envrc
+
+# Generated repository trees
+/apt/
+/rpm/
+/apk/
+/keys/
+
+# Downloaded package artifacts
+*.deb
+*.rpm
+*.apk
