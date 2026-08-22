@@ -29,3 +29,4 @@ jobs:
       tag: ${{ inputs.tag || github.event.client_payload.tag }}
       cloudflare-account-id: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
       r2-bucket: ${{ vars.PACKAGE_REPOSITORY_R2_BUCKET }}
+    secrets: inherit
