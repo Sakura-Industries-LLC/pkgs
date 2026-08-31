@@ -1,7 +1,7 @@
 # How to operate the package repository
 
 Replay a verified producer GitHub Release into the public repository at
-<https://pkgs.meigma.dev>, inspect the result, and recover a failed run.
+<https://pkgs.sakuraindustries.net>, inspect the result, and recover a failed run.
 
 ## Prerequisites
 
@@ -21,22 +21,22 @@ Run **Publish package release** with the producer repository and exact tag.
 
 From the Actions tab, enter:
 
-- `repository`: GitHub `owner/name`, such as `meigma/release`
-- `tag`: the published stable tag, such as `v0.1.7`
+- `repository`: GitHub `owner/name`, such as `Sakura-Industries-LLC/dntls-public`
+- `tag`: the published stable tag, such as `v0.1.0`
 
 From the CLI:
 
 ```bash
 gh workflow run publish.yml \
-  --repo meigma/pkgs \
-  -f repository=meigma/release \
-  -f tag=v0.1.7
+  --repo Sakura-Industries-LLC/pkgs \
+  -f repository=Sakura-Industries-LLC/dntls-public \
+  -f tag=v0.1.0
 ```
 
 Replace the repository and tag with the published producer release you are
 replaying. The workflow calls
-`meigma/release/.github/workflows/publish-package-repository.yml` at
-`c1ee17342ec62b37fe728834975ce678f334ffd0` and selects
+`Sakura-Industries-LLC/release/.github/workflows/publish-package-repository.yml`
+at `822116cd4dee07d65a8573834e87ae4e08ffb07a` and selects
 `packages-production`. Concurrent production writes share the
 `package-repository-production` group and are not cancelled.
 
@@ -54,18 +54,18 @@ The publish step log contains that envelope. Both states are success.
 
 ## Check the public roots
 
-After a successful run, fetch the three commit roots:
+After a successful run, fetch the three repository roots:
 
 ```bash
 curl --fail --silent --show-error \
-  https://pkgs.meigma.dev/apt/dists/stable/InRelease >/dev/null
+  https://pkgs.sakuraindustries.net/apt/dists/stable/InRelease >/dev/null
 curl --fail --silent --show-error \
-  https://pkgs.meigma.dev/rpm/stable/x86_64/repodata/repomd.xml >/dev/null
+  https://pkgs.sakuraindustries.net/rpm/stable/x86_64/repodata/repomd.xml >/dev/null
 curl --fail --silent --show-error \
-  https://pkgs.meigma.dev/apk/stable/main/x86_64/APKINDEX.tar.gz >/dev/null
+  https://pkgs.sakuraindustries.net/apk/stable/main/x86_64/APKINDEX.tar.gz >/dev/null
 ```
 
-A reachable root means that format's metadata was committed; it is not a
+A reachable root means that format's metadata was published; it is not a
 client installation check.
 
 Client installation commands are omitted until a production publication

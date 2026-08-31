@@ -1,5 +1,5 @@
 channel: stable
-origin: https://pkgs.meigma.dev
+origin: https://pkgs.sakuraindustries.net
 keys:
   apt:
     source: keys/repository.asc
@@ -11,14 +11,14 @@ keys:
     source: keys/repository-apk.rsa.pub
     published: apk-index-001.rsa.pub
 producers:
-  - repository: meigma/release
+  - repository: Sakura-Industries-LLC/dntls-public
     packages:
-      - release-cli
+      - dntls
     checksum_workflow: .github/workflows/go-pre-publish.yml
     attestation_workflow: .github/workflows/publish-github-release.yml
     rpm_key:
-      source: keys/release-rpm.asc
-      published: release-rpm-001.asc
+      source: keys/dntls-rpm.asc
+      published: dntls-rpm-001.asc
     apk_key:
-      source: keys/release-apk.rsa.pub
-      published: meigma-release-001.rsa.pub
+      source: keys/dntls-apk.rsa.pub
+      published: dntls-apk-001.rsa.pub
