@@ -21,7 +21,7 @@ Run **Publish package release** with the producer repository and exact tag.
 
 From the Actions tab, enter:
 
-- `repository`: GitHub `owner/name`, such as `Sakura-Industries-LLC/dntls-public`
+- `repository`: GitHub `owner/name`, such as `Sakura-Industries-LLC/dntls-testnet`
 - `tag`: the published stable tag, such as `v0.1.0`
 
 From the CLI:
@@ -29,7 +29,7 @@ From the CLI:
 ```bash
 gh workflow run publish.yml \
   --repo Sakura-Industries-LLC/pkgs \
-  -f repository=Sakura-Industries-LLC/dntls-public \
+  -f repository=Sakura-Industries-LLC/dntls-testnet \
   -f tag=v0.1.0
 ```
 
