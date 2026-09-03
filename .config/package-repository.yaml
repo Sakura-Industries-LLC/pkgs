@@ -11,7 +11,7 @@ keys:
     source: keys/repository-apk.rsa.pub
     published: apk-index-001.rsa.pub
 producers:
-  - repository: Sakura-Industries-LLC/dntls-public
+  - repository: Sakura-Industries-LLC/dntls-testnet
     packages:
       - dntls
     checksum_workflow: .github/workflows/go-pre-publish.yml
