@@ -71,6 +71,16 @@ client installation check.
 Client installation commands are omitted until a production publication
 completes its installation acceptance check.
 
+## Private testnet RPM signing key
+
+The private Forgejo feed uses
+[`dntls-testnet-rpm.asc`](../.config/keys/dntls-testnet-rpm.asc) for producer
+signatures. Its fingerprint is
+`58A8586219F782DA356F0E175C2FA50C262CAF8A`.
+
+This file is a public verification key, not a change to the public repository's
+allowlist. The existing `dntls-rpm.asc` key and publication policy are unchanged.
+
 ## Recover a failed run
 
 Do not delete or rename objects in R2. Fix the failed prerequisite, then
